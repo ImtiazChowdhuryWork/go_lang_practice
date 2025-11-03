@@ -276,7 +276,30 @@ func dateTimePractice(){
 	
 
 
-	formatedTime := currentDateTime.Format("15-04-05")
-	fmt.Printf("Formated Date in 24hr Format : %s",formatedTime)
+	formatedTimeAt24Hr := currentDateTime.Format("15-04-05")
+	fmt.Printf("Formated Time in 24hr Format : %s",formatedTimeAt24Hr)
+	fmt.Println()
+
+	formatedTimeAt12Hr := currentDateTime.Format("03-04-05")
+	fmt.Printf("Formated Time in 12Hr Format : %s",formatedTimeAt12Hr)
+	fmt.Println()
+
+	formatedTimeAt12HrAmPmFormat := currentDateTime.Format("03-04 PM")
+	fmt.Printf("Formated Time in 12Hr AM/PM Format : %s",formatedTimeAt12HrAmPmFormat)
+	fmt.Println()
+
+	formatedTimeWithDayNameFormat := currentDateTime.Format("03-04 PM Monday")
+	fmt.Printf("Formated Time in 12Hr AM/PM Format : %s",formatedTimeWithDayNameFormat)
+	fmt.Println()
+
+	dateAtDayMonthYearFormat := currentDateTime.Format("01-02-2006")
+
+	layout_str := "01-02-2006"
+	
+
+	parseInTimeFormatFromDateFormat,_ := time.Parse(layout_str,dateAtDayMonthYearFormat)
+	fmt.Printf("Formated Time in Time Format : %s",parseInTimeFormatFromDateFormat)
+	fmt.Println()
+	fmt.Printf("Formated Time in Formate Type : %T",parseInTimeFormatFromDateFormat)
 	fmt.Println()
 }
